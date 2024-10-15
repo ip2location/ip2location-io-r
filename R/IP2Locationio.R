@@ -25,11 +25,11 @@ setApiKey <- function(api_key) {
 #' @import jsonlite
 #' @export
 #' @examples \dontrun{
-#' get_all("1.0.241.135")
+#' lookup("1.0.241.135")
 #' }
 #'
 
-get_all <- function(ip){
+lookup <- function(ip){
   py_run_string("import json")
   py_run_string("ipgeolocation = ip2locationio.IPGeolocation(configuration)")
   address = paste("rec = ipgeolocation.lookup('", ip, "')", sep = "")
