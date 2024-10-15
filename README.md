@@ -3,6 +3,10 @@ IP2Location.io R Package enables user to query for an enriched data set, such as
 
 This module requires API key to function. You may sign up for a free API key at https://www.ip2location.io/pricing.
 
+Developer Documentation
+=====================
+
+To learn more about installation, usage, and code examples, please visit the developer documentation at [https://ip2location-io-r.readthedocs.io/en/latest/index.html](https://ip2location-io-r.readthedocs.io/en/latest/index.html).
 
 # LICENCE
 See the LICENSE file.
