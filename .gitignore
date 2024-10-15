@@ -1,0 +1,25 @@
+# RStudio files
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+
+# macOS Finder files
+.DS_Store
+
+# Windows Explorer file
+Thumbs.db
+
+# Package build files
+*.tar.gz
+*.Rcheck/
+
+# Vignettes output
+vignettes/*.html
+vignettes/*.pdf
+
+# Temporary files
+*.log
+*.aux
+*.out
+*.toc
