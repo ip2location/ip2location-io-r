@@ -9,6 +9,9 @@ setApiKey(api_key)
 \arguments{
 \item{api_key}{IP2Location.io API key}
 }
+\value{
+No return value, called for side effects.
+}
 \description{
 Set IP2Location.io API key for lookup. Free API key can be obtained from <https://www.ip2location.io/sign-up?ref=1/>
 }

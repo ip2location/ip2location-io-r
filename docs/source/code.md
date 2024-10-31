@@ -92,3 +92,35 @@ Retrieve geolocation information for an IP address.
 |proxy.is_consumer_privacy_network|boolean|Consumer Privacy Networks.|
 |proxy.is_enterprise_private_network|boolean|Enterprise Private Networks.|
 ```
+
+```{py:function} lookupASNByIP(ip_address)
+Lookup an IP address's Autonomous system name and number.
+
+:param string ip_address: (Required) The IP address (IPv4 or IPv6).
+:return: Returns the Autonomous system name and number of the the IP address.
+:rtype: array
+```
+
+```{py:function} lookupCountryByIP(ip_address)
+Lookup an IP address's country.
+
+:param string ip_address: (Required) The IP address (IPv4 or IPv6).
+:return: Return the country name of the the IP address.
+:rtype: array
+```
+
+```{py:function} lookupCoordinateByIP(ip_address)
+Lookup an IP address's coordinate.
+
+:param string ip_address: (Required) The IP address (IPv4 or IPv6).
+:return: Return the coordinate of the the IP address.
+:rtype: array
+```
+
+```{py:function} lookupLocationByIP(ip_address)
+Lookup an IP address's location in text.
+
+:param string ip_address: (Required) The IP address (IPv4 or IPv6).
+:return: Return the location of the the IP address in text.
+:rtype: array
+```

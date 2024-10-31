@@ -2,7 +2,7 @@
 #'
 #' @description Set IP2Location.io API key for lookup. Free API key can be obtained from <https://www.ip2location.io/sign-up?ref=1/>
 #' @param api_key IP2Location.io API key
-#' @return NULL
+#' @return No return value, called for side effects.
 #' @import reticulate
 #' @export
 #' @examples \dontrun{
@@ -37,4 +37,89 @@ lookup <- function(ip){
   py_run_string("j = json.dumps(rec)")
   result = fromJSON(py$j)
   return(result)
+}
+
+
+#' @title Lookup an IP address's country
+#'
+#' @description Lookup for the IP address's country
+#' @param ip IPv4 or IPv6 address
+#' @return Return the country name of the the IP address
+#' @import reticulate
+#' @export
+#' @examples \dontrun{
+#' lookupCountryByIP("1.0.241.135")
+#' }
+#'
+
+lookupCountryByIP <- function(ip){
+  py_run_string("ipgeolocation = ip2locationio.IPGeolocation(configuration)")
+  address = paste("rec = ipgeolocation.lookup('", ip, "')", sep = "")
+  py_run_string(address)
+  py_run_string("country_name = rec['country_name']")
+  result_from_python <- py$country_name
+  return(result_from_python)
+}
+
+#' @title Lookup an IP address's coordinate
+#'
+#' @description Lookup for the IP address's coordinate
+#' @param ip IPv4 or IPv6 address
+#' @return Return the coordinate of the the IP address
+#' @import reticulate
+#' @export
+#' @examples \dontrun{
+#' lookupCoordinateByIP("1.0.241.135")
+#' }
+#'
+
+lookupCoordinateByIP <- function(ip){
+  py_run_string("ipgeolocation = ip2locationio.IPGeolocation(configuration)")
+  address = paste("rec = ipgeolocation.lookup('", ip, "')", sep = "")
+  py_run_string(address)
+  py_run_string("coordinate = (rec['latitude'], rec['longitude'])")
+  result_from_python <- py$coordinate
+  return(result_from_python)
+}
+
+#' @title Lookup an IP address's Autonomous system name and number
+#'
+#' @description Lookup for the IP address's Autonomous system name and number
+#' @param ip IPv4 or IPv6 address
+#' @return Return the Autonomous system name and number of the the IP address
+#' @import reticulate
+#' @export
+#' @examples \dontrun{
+#' lookupASNByIP("1.0.241.135")
+#' }
+#'
+
+lookupASNByIP <- function(ip){
+  py_run_string("ipgeolocation = ip2locationio.IPGeolocation(configuration)")
+  address = paste("rec = ipgeolocation.lookup('", ip, "')", sep = "")
+  py_run_string(address)
+  py_run_string("as_info = {'as_name': rec['as'], 'as_number': rec['asn']}")
+  result_from_python <- py$as_info
+  return(result_from_python)
+}
+
+#' @title Lookup an IP address's location in text
+#'
+#' @description Lookup for the IP address's location in text
+#' @param ip IPv4 or IPv6 address
+#' @return Return the location of the the IP address in text
+#' @import reticulate
+#' @export
+#' @examples \dontrun{
+#' lookupLocationByIP("1.0.241.135")
+#' }
+#'
+
+lookupLocationByIP <- function(ip){
+  py_run_string("ipgeolocation = ip2locationio.IPGeolocation(configuration)")
+  address = paste("rec = ipgeolocation.lookup('", ip, "')", sep = "")
+  py_run_string(address)
+  py_run_string("location = f'{rec['city_name']}, {rec['region_name']}, {rec['country_name']}'")
+  result_from_python <- py$location
+  return(result_from_python)
 }

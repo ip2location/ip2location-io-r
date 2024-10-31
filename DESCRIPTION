@@ -1,12 +1,14 @@
 Package: ip2locationio
 Type: Package
-Title: Lookup Geolocation and Proxy information using IP2Location.io API.
+Title: Lookup Geolocation and Proxy Information using 'IP2Location.io' API
 Version: 1.0.0
-Author: IP2Location.io
+Authors@R: person(family = "IP2Location.io",
+                    role = c("aut", "cre"),
+                    email = "support@ip2location.io")
 Maintainer: IP2Location.io <support@ip2location.io>
-Description: A R package that enables user to query for an enriched data set, such as country, region, city, latitude & longitude, ZIP code, time zone, ASN, ISP, domain, net speed, IDD code, area code, weather station data, MNC, MCC, mobile brand, elevation, usage type, address type, advertisement category and proxy data with an IP address.
-    To get started with a free API key, you may sign up at here <https://www.ip2location.io/sign-up?ref=1>.
-License: MIT
+Description: Query for enriched data such as country, region, city, latitude & longitude, ZIP code, time zone, Autonomous System, Internet Service Provider, domain, net speed, International direct dialing (IDD) code, area code, weather station data, mobile data, elevation, usage type, address type, advertisement category, and proxy data with an IP address.
+    This package uses the 'IP2Location.io' API to query this data. To get started with a free API key, sign up here <https://www.ip2location.io/sign-up?ref=1>.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: reticulate (>= 1.13), jsonlite (>= 1.6)
