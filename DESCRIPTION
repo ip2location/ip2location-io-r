@@ -6,7 +6,7 @@ Authors@R: person(family = "IP2Location.io",
                     role = c("aut", "cre"),
                     email = "support@ip2location.io")
 Maintainer: IP2Location.io <support@ip2location.io>
-Description: Query for enriched data such as country, region, city, latitude & longitude, ZIP code, time zone, Autonomous System, Internet Service Provider, domain, net speed, International direct dialing (IDD) code, area code, weather station data, mobile data, elevation, usage type, address type, advertisement category, and proxy data with an IP address.
+Description: Query for enriched data such as country, region, city, latitude & longitude, ZIP code, time zone, Autonomous System, Internet Service Provider, domain, net speed, International direct dialing (IDD) code, area code, weather station data, mobile data, elevation, usage type, address type, advertisement category, fraud score, and proxy data with an IP address.
     This package uses the 'IP2Location.io' API to query this data. To get started with a free API key, sign up here <https://www.ip2location.io/sign-up?ref=1>.
 License: MIT + file LICENSE
 Encoding: UTF-8
