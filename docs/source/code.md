@@ -125,3 +125,31 @@ Lookup an IP address's location in text.
 :return: Return the location of the the IP address in text.
 :rtype: array
 ```
+
+## HostedDomain Class
+
+```{py:class} HostedDomain(config)
+Initialize the HostedDomain class.
+
+:param object config: (Required) The IP2Location.io Configuration object returned by Configuration class.
+```
+
+```{py:function} lookup(ip_address, page)
+Retrieve a list of hosted domains for an IP address.
+
+:param string ip_address: (Required) The IP address (IPv4 or IPv6).
+:param integer page: (Optional) Pagination result returns of the hosted domains. If unspecified, 1st page will be used. 
+:::
+:return: Returns the domain list in JSON. Refer below table for the fields avaliable in the JSON
+:rtype: json
+
+**RETURN FIELDS**
+| Parameter | Type | Description |
+|---|---|---|
+|ip|string|IP address.|
+|total_domains|integer|Total number of hosted domains found.|
+|page|integer|Current lookup page.|
+|per_page|integer|Number of domains displayed in the page.|
+|total_pages|integer|Total pages of the hosted domains.|
+|domains|array|Hosted domains of the lookup IP Address.|
+```

@@ -34,3 +34,15 @@ ip2locationio::setApiKey("YOUR_API_KEY")
 result = ip2locationio::lookup("8.8.8.8")
 print(result)
 ```
+
+### Get Hosted Domain List
+
+You can get the domains hosted within the IP using following codes:
+
+```r
+library(ip2locationio)
+
+ip2locationio::setApiKey("YOUR_API_KEY")
+result = ip2locationio::lookupHostedDomain("8.8.8.8")
+print(result)
+```

@@ -39,6 +39,35 @@ lookup <- function(ip){
   return(result)
 }
 
+#' @title Lookup for domains hosted on an IP address.
+#'
+#' @description Lookup for a list of hosted domain names by the IP address.
+#' @param ip IPv4 or IPv6 address
+#' @param page (optional) Pagination result returns of the hosted domains. If unspecified, 1st page will be used.
+#' @return Return list of hosted domain names by the IP address
+#' @import reticulate
+#' @import jsonlite
+#' @export
+#' @examples \dontrun{
+#' lookupHostedDomain("1.0.241.135")
+#' }
+#'
+
+lookupHostedDomain <- function(ip, page){
+  py_run_string("import json")
+  py_run_string("hosteddomain = ip2locationio.HostedDomain(configuration)")
+  if(missing(page)) {
+    address = paste("rec = hosteddomain.lookup('", ip, "')", sep = "")
+  } else {
+    address = paste("rec = hosteddomain.lookup('", ip, "','", page, "')", sep = "")
+  }
+
+  py_run_string(address)
+  py_run_string("j = json.dumps(rec)")
+  result = fromJSON(py$j)
+  return(result)
+}
+
 
 #' @title Lookup an IP address's country
 #'
